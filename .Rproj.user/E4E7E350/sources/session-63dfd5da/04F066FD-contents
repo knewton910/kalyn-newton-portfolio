@@ -1,0 +1,85 @@
+---
+toc: false
+page-layout: full
+---
+
+::: {.contact-hero}
+
+<p class="contact-eyebrow">LET'S CONNECT</p>
+
+# Ideas become more meaningful when they're shared. {.contact-heading}
+
+<p class="contact-intro">
+Whether you're interested in public health, research, data, healthcare, or simply exchanging ideas, I'd love to connect.
+</p>
+
+![](images/decorative-vector2.png){.contact-flourish fig-alt=""}
+
+:::
+
+
+::: {.connect-marquee aria-label="Let's collaborate, create, connect, and build something meaningful."}
+
+<div class="connect-marquee-track">
+
+<span>
+LET'S COLLABORATE ✦ LET'S CREATE ✦ LET'S CONNECT ✦ 
+</span>
+
+<span aria-hidden="true">
+LET'S COLLABORATE ✦ LET'S CREATE ✦ LET'S CONNECT ✦ 
+</span>
+
+</div>
+
+:::
+
+
+::: {.contact-options}
+
+::: {.contact-item}
+
+![](images/email-icon.png){.contact-icon fig-alt="Email icon"}
+
+<p class="contact-label">EMAIL</p>
+
+<p class="contact-detail">
+newton.kalyn@gmail.com
+</p>
+
+:::
+
+
+::: {.contact-item}
+
+![](images/linkedin-icon.png){.contact-icon fig-alt="LinkedIn icon"}
+
+<p class="contact-label">LINKEDIN</p>
+
+<p class="contact-detail">
+[Connect with me](https://www.linkedin.com/in/kalyn-newton/)
+</p>
+
+:::
+
+
+::: {.contact-item}
+
+![](images/location-icon.png){.contact-icon fig-alt="Location icon"}
+
+<p class="contact-label">LOCATION</p>
+
+<p class="contact-detail">
+Atlanta, Georgia
+</p>
+
+:::
+
+:::
+
+
+::: {.contact-closing}
+
+<p>Thanks for stopping by. ♡</p>
+
+:::

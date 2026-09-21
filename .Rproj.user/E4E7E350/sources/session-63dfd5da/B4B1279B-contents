@@ -1,0 +1,514 @@
+---
+toc: false
+page-layout: full
+---
+
+<div id="cv-top"></div>
+
+::: {.cv-page}
+
+::: {.cv-hero}
+
+:::: {.cv-hero-grid}
+
+::: {.cv-hero-copy}
+
+<p class="cv-kicker">CURRICULUM VITAE</p>
+
+<h1 class="cv-title">Experience.<br>Impact.<br>What’s Next.</h1>
+
+<p class="cv-subtitle">
+A snapshot of my academic journey, professional experience, leadership, and skills.
+</p>
+
+:::
+
+::: {.cv-download-area}
+
+[↓ &nbsp; Download CV](files/Kalyn%20Newton%20CV.pdf){.cv-download-button}
+
+[↓ &nbsp; Download Resume](files/Kalyn%20Newton%20Resume.pdf){.cv-download-button}
+
+<p class="cv-download-note">PDF • UPDATED SEPT 2026</p>
+
+:::
+
+::::
+
+:::
+
+
+::: {.cv-main-layout}
+
+::: {.cv-sidebar}
+
+<nav class="cv-side-nav" aria-label="CV sections">
+
+<a href="#overview">Overview</a>
+<a href="#education">Education</a>
+<a href="#experience">Experience</a>
+<a href="#research-projects">Research & Projects</a>
+<a href="#leadership-service">Leadership & Service</a>
+<a href="#skills">Skills</a>
+<a href="#references">References</a>
+
+</nav>
+
+<div class="cv-sidebar-accent"></div>
+
+<p class="cv-sidebar-quote">
+“Knowledge is a tool,<br>
+but people are the<br>
+purpose.”
+</p>
+
+:::
+
+
+::: {.cv-content}
+
+
+<section id="overview" class="cv-section">
+
+<div class="cv-section-grid">
+
+<div class="cv-icon-wrap">
+<img src="images/overview-icon.png"
+     class="cv-section-icon icon-overview"
+     alt="Overview icon">
+</div>
+
+<div class="cv-section-content">
+
+<h2>Overview</h2>
+
+<p>
+I am a Master of Public Health candidate at Morehouse School of Medicine with experience across community health, research, data analysis, healthcare, and organizational operations. My current work centers on understanding how people experience health systems, identifying gaps in access and service delivery, and translating data and community perspectives into practical solutions. I am especially interested in chronic disease prevention, social and structural influences on health, community-informed intervention design, and the use of data to support better public health decision-making.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="education" class="cv-section">
+
+<div class="cv-section-grid">
+
+<div class="cv-icon-wrap">
+<img src="images/education-icon.png"
+     class="cv-section-icon icon-education"
+     alt="Education icon">
+</div>
+
+<div class="cv-section-content">
+
+<h2>Education</h2>
+
+
+<div class="cv-entry">
+
+<p class="cv-entry-title">
+Master of Public Health
+</p>
+
+<p class="cv-entry-meta">
+Morehouse School of Medicine &nbsp; | &nbsp; Atlanta, Georgia &nbsp; | &nbsp; Expected May 2027
+</p>
+
+</div>
+
+
+<div class="cv-entry">
+
+<p class="cv-entry-title">
+Bachelor of Science, Pre-Professional Chemistry; Minor in Biology
+</p>
+
+<p class="cv-entry-meta">
+Xavier University of Louisiana &nbsp; | &nbsp; New Orleans, Louisiana &nbsp; | &nbsp; May 2020
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="experience" class="cv-section">
+
+<div class="cv-section-grid">
+
+<div class="cv-icon-wrap">
+<img src="images/experience-icon.png"
+     class="cv-section-icon icon-experience"
+     alt="Public health experience icon">
+</div>
+
+<div class="cv-section-content">
+
+<h2>Public Health Experience</h2>
+
+
+<div class="cv-entry">
+
+<p class="cv-entry-title">
+Public Health Intern, Applied Practice Experience
+</p>
+
+<p class="cv-entry-meta">
+Wellness Equity Alliance &nbsp; | &nbsp; California &nbsp; | &nbsp; Summer 2026
+</p>
+
+<p>
+Supported mobile health initiatives through outreach operations, data analytics, GIS, health communication, and workflow improvement.
+</p>
+
+</div>
+
+
+<div class="cv-entry">
+
+<p class="cv-entry-title">
+Clinical Research Intern
+</p>
+
+<p class="cv-entry-meta">
+Eagle Owl Clinical Research and Consulting &nbsp; | &nbsp; Mableton, Georgia &nbsp; | &nbsp; Dec 2023–Jun 2024
+</p>
+
+<p>
+Supported clinical research documentation, data review, and study monitoring activities across multiple active study sites.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="research-projects" class="cv-section">
+
+<div class="cv-section-grid">
+
+<div class="cv-icon-wrap">
+<img src="images/publications-icon.png"
+     class="cv-section-icon icon-research"
+     alt="Academic research and projects icon">
+</div>
+
+<div class="cv-section-content">
+
+<h2>Academic Research & Projects</h2>
+
+
+<div class="cv-entry">
+
+<p class="cv-entry-title">
+Age at First Live Birth and Socioeconomic Status Among U.S. Women
+</p>
+
+<p class="cv-entry-meta">
+MPH 716 R and Health Sciences &nbsp; | &nbsp; 2026
+</p>
+
+<p>
+NHANES analysis using R, data visualization, and regression methods.
+</p>
+
+</div>
+
+
+<div class="cv-entry">
+
+<p class="cv-entry-title">
+Factors Associated with PSA Testing Among U.S. Men Aged 40 and Older
+</p>
+
+<p class="cv-entry-meta">
+MPH 506 Research Methods &nbsp; | &nbsp; 2026
+</p>
+
+<p>
+Research proposal examining sociodemographic patterns in PSA testing using BRFSS data.
+</p>
+
+</div>
+
+
+<div class="cv-entry">
+
+<p class="cv-entry-title">
+Life Expectancy in Benin and the United States
+</p>
+
+<p class="cv-entry-meta">
+MPH 716 R and Health Sciences &nbsp; | &nbsp; 2026
+</p>
+
+<p>
+R data visualization project examining life expectancy and GDP per capita trends.
+</p>
+
+</div>
+
+
+<div class="cv-entry">
+
+<p class="cv-entry-title">
+Structural Bias and Social Inequities in New Orleans
+</p>
+
+<p class="cv-entry-meta">
+Fundamentals of Public Health &nbsp; | &nbsp; 2025
+</p>
+
+<p>
+Course research examining housing, economic inequities, cardiovascular health, and prevention.
+</p>
+
+</div>
+
+
+<div class="cv-entry">
+
+<p class="cv-entry-title">
+NPU-T Community Needs Assessment & Windshield Survey
+</p>
+
+<p class="cv-entry-meta">
+Fundamentals of Public Health &nbsp; | &nbsp; 2025
+</p>
+
+<p>
+Community assessment examining neighborhood conditions and access to community resources.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="leadership-service" class="cv-section">
+
+<div class="cv-section-grid">
+
+<div class="cv-icon-wrap">
+<img src="images/leadership-icon.png"
+     class="cv-section-icon icon-leadership"
+     alt="Leadership and service icon">
+</div>
+
+<div class="cv-section-content">
+
+<h2>Leadership & Service</h2>
+
+
+<p class="cv-skill-label">LEADERSHIP & INVOLVEMENT</p>
+
+
+<div class="cv-entry cv-entry-compact">
+
+<p class="cv-entry-title">
+Director of Finance and Logistics
+</p>
+
+<p class="cv-entry-meta">
+MSM Campus Activities Board &nbsp; | &nbsp; Jul 2026–Present
+</p>
+
+</div>
+
+
+<div class="cv-entry cv-entry-compact">
+
+<p class="cv-entry-title">
+Intern Leadership Roles
+</p>
+
+<p class="cv-entry-meta">
+Wellness Equity Alliance &nbsp; | &nbsp; Summer 2026
+</p>
+
+</div>
+
+
+<p class="cv-skill-label">COMMUNITY SERVICE</p>
+
+
+<div class="cv-entry cv-entry-compact">
+
+<p class="cv-entry-title">
+MSM Day of Service
+</p>
+
+<p class="cv-entry-meta">
+JP Moseley Recreation Park &nbsp; | &nbsp; Apr 2026
+</p>
+
+</div>
+
+
+<div class="cv-entry cv-entry-compact">
+
+<p class="cv-entry-title">
+Emory University x EPHC
+</p>
+
+<p class="cv-entry-meta">
+Burgess Peterson Academy &nbsp; | &nbsp; Dec 2025
+</p>
+
+</div>
+
+
+<div class="cv-entry cv-entry-compact">
+
+<p class="cv-entry-title">
+MSM Community Engagement Day
+</p>
+
+<p class="cv-entry-meta">
+Morehouse School of Medicine &nbsp; | &nbsp; Oct 2025
+</p>
+
+</div>
+
+
+<div class="cv-entry cv-entry-compact">
+
+<p class="cv-entry-title">
+More Than Pink Walk
+</p>
+
+<p class="cv-entry-meta">
+Susan G. Komen &nbsp; | &nbsp; Oct 2025
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="skills" class="cv-section">
+
+<div class="cv-section-grid">
+
+<div class="cv-icon-wrap">
+<img src="images/skills-icon.png"
+     class="cv-section-icon icon-skills"
+     alt="Skills icon">
+</div>
+
+<div class="cv-section-content">
+
+<h2>Skills</h2>
+
+
+<div class="cv-skills-simple">
+
+<ul class="cv-skill-list">
+<li>R & RStudio</li>
+<li>SAS</li>
+<li>ArcGIS</li>
+<li>Data Visualization</li>
+<li>Statistical Analysis</li>
+<li>Dashboard Development</li>
+</ul>
+
+<ul class="cv-skill-list">
+<li>Project Management</li>
+<li>Systems Thinking & Process Improvement</li>
+<li>Community Assessment</li>
+<li>Stakeholder Engagement</li>
+<li>Research</li>
+<li>Health & Professional Communication</li>
+</ul>
+
+</div>
+
+
+<div class="cv-languages">
+
+<p class="cv-skill-label">LANGUAGES</p>
+
+<p>
+English &nbsp; • &nbsp; Spanish &nbsp; • &nbsp; American Sign Language
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<section id="references" class="cv-section">
+
+<div class="cv-section-grid">
+
+<div class="cv-icon-wrap">
+<img src="images/references-icon.png"
+     class="cv-section-icon icon-references"
+     alt="References icon">
+</div>
+
+<div class="cv-section-content">
+
+<h2>References</h2>
+
+<p class="cv-reference-note">
+Available upon request.
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+
+:::
+:::
+
+
+::: {.cv-closing}
+
+<div class="cv-footer-band">
+PEOPLE ◆ DATA ◆ PREVENTION ◆ EQUITY ◆ BETTER HEALTH FOR STRONGER COMMUNITIES
+</div>
+
+<p class="cv-closing-message">
+Thank you for taking the time to learn more about my journey. ♡
+</p>
+
+<div id="cv-bottom"></div>
+
+:::
+
+:::
+
+
+<a href="#cv-bottom"
+   class="cv-scroll-arrow"
+   aria-label="Scroll to bottom of CV">
+  <span class="cv-scroll-arrow-icon">↓</span>
+</a>

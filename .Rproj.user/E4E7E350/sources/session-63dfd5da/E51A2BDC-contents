@@ -1,0 +1,73 @@
+---
+toc: false
+page-layout: full
+---
+
+::: {.home-brand}
+![](images/kn-monogram3.png){.home-logo fig-alt="Kalyn Newton monogram logo"}
+:::
+
+::: {.home-hero}
+
+::: {.home-photo}
+![](images/kalyn-home.png){fig-alt="Portrait of Kalyn Newton"}
+:::
+
+::: {.home-intro}
+
+<p class="home-eyebrow">THIS IS ME</p>
+
+# Hi, I'm *Kalyn.* {.home-heading}
+    
+<p class="home-summary">
+I’m a curious systems thinker, creative problem-solver, and lifelong learner who loves finding meaning in the details. I’m drawn to the intersection of people, data, and purpose—especially when there’s an opportunity to turn an idea into something that genuinely helps others. Whether I’m analyzing a problem, creating something new, or serving my community, I bring curiosity, compassion, and a little bit of quiet-storm energy to everything I do.
+</p>
+
+
+[LEARN MORE ->](about.qmd){.home-button}
+
+:::
+
+:::
+
+::: {.focus-card}
+
+<p class="focus-title">PROFESSIONAL FOCUS</p>
+
+:::: {.columns}
+
+::: {.column width="25%"}
+![](images/epi-icon.png){.focus-image fig-alt="Bar chart representing epidemiology"}
+
+<p class="focus-label">EPIDEMIOLOGY</p>
+:::
+
+::: {.column width="25%"}
+![](images/prevention-icon.png){.focus-image fig-alt="Medical shield representing prevention"}
+
+<p class="focus-label">PREVENTION</p>
+:::
+
+::: {.column width="25%"}
+![](images/data-icon.png){.focus-image fig-alt="Laptop representing data informatics"}
+
+<p class="focus-label">DATA INFORMATICS</p>
+:::
+
+::: {.column width="25%"}
+![](images/community-icon.png){.focus-image fig-alt="Group of people representing community health"}
+
+<p class="focus-label">COMMUNITY HEALTH</p>
+:::
+
+::::
+
+:::
+
+<a href="#home-bottom"
+   class="scroll-cue"
+   aria-label="Scroll to the bottom of the home page">
+  <span class="scroll-arrow">↓</span>
+</a>
+
+<div id="home-bottom"></div>

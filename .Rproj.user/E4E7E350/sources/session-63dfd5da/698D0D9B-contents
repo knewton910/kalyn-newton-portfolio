@@ -1,0 +1,123 @@
+---
+title: "Lab 5: Professional Quarto Portfolio Website"
+subtitle: "Student Version"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-tools: true
+execute:
+  eval: false
+  warning: false
+  message: false
+---
+
+# Learning Objectives
+
+You will create, connect, publish, and review the initial version of your professional Quarto portfolio website.
+
+# Part 1: Plan the Website
+
+Complete a planning table for:
+
+- Home,
+- About,
+- Education or Experience,
+- Skills,
+- Projects,
+- CV,
+- Contact.
+
+For each page, identify its purpose, required content, and materials needed.
+
+# Part 2: Create the Quarto Website
+
+Create a Quarto website project with a professional repository name.
+
+Create:
+
+```text
+_quarto.yml
+index.qmd
+about.qmd
+projects.qmd
+cv.qmd
+contact.qmd
+styles.css
+images/
+files/
+```
+
+# Part 3: Configure the Website
+
+Your `_quarto.yml` must include:
+
+- website project type,
+- `docs` output directory,
+- functioning navigation,
+- professional built-in theme,
+- custom CSS,
+- and table of contents where appropriate.
+
+```yaml
+# Add your configuration here.
+```
+
+# Part 4: Build Complete Pages
+
+Write complete, professional content for every required page.
+
+Do not submit empty pages or unfinished placeholders.
+
+# Part 5: Add the CV or Résumé
+
+Place a public-safe PDF in `files/` and create a functioning download link.
+
+# Part 6: Apply Design and Accessibility
+
+Include:
+
+- descriptive links,
+- meaningful heading levels,
+- alt text for images,
+- adequate contrast,
+- readable font sizes,
+- and consistent styling.
+
+# Part 7: Connect Git and GitHub
+
+Create or connect a GitHub repository. Make at least three meaningful commits during development.
+
+# Part 8: Publish
+
+Render the website to `docs/`, configure GitHub Pages, and test the public URL.
+
+# Part 9: Peer Review
+
+Ask a classmate to provide:
+
+- two strengths,
+- two recommended revisions,
+- and one question a hiring manager might ask.
+
+# Part 10: Reflection
+
+Explain:
+
+1. the professional identity you wanted to communicate,
+2. your major design decisions,
+3. your accessibility choices,
+4. and the most challenging part of Git or GitHub.
+
+# Deliverables
+
+Submit:
+
+- public website URL,
+- GitHub repository URL,
+- complete website files,
+- functioning CV link,
+- peer review,
+- reflection,
+- and meaningful commit history.

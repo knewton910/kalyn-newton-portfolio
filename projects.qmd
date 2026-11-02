@@ -349,6 +349,45 @@ page-layout: full
           </div>
         </article>
 
+
+<!-- LAB 7: INTERACTIVE GLOBAL HEALTH VISUALIZATION -->
+<article class="project-card">
+
+  <div class="project-card-image">
+    <img
+      src="images/Gapminder2007-staticplot.png"
+      alt="Scatterplot of GDP per capita and life expectancy across countries in 2007"
+      class="project-preview-image"
+    >
+  </div>
+
+  <div class="project-card-body">
+
+    <h3>Interactive Global Health Data Visualization</h3>
+
+    <div class="project-tags">
+      <span>R Programming</span>
+      <span>Data Visualization</span>
+      <span>Plotly</span>
+    </div>
+
+    <p class="project-card-subtitle">
+      Hover over data points, zoom into trends, and search
+      the interactive table. Static alternatives are
+      included in the report.
+    </p>
+
+    <a
+      href="files/lab_07_interactive_plotly_visualization_2.html"
+      class="project-view-button"
+      target="_blank"
+      rel="noopener noreferrer">
+      VIEW PROJECT <span aria-hidden="true">→</span>
+    </a>
+
+  </div>
+</article>
+
       </div>
 
 

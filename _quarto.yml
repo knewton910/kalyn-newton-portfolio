@@ -5,7 +5,7 @@ project:
     - "files/**"
 
 website:
-  title: "Kalyn Newton, MPH(c), B.S."
+  title: "Kalyn Newton, MPH Scholar, B.S."
   
   navbar:
     right: 

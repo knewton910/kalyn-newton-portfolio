@@ -388,6 +388,47 @@ page-layout: full
   </div>
 </article>
 
+
+
+<!-- LAB 8: GIS MAPPING FOR PUBLIC HEALTH -->
+<article class="project-card">
+
+  <div class="project-card-image">
+    <img
+      src="images/GIS-Lab8-screenshot.png"
+      alt="Georgia county-level GIS map illustrating simulated vaccination coverage"
+      class="project-preview-image"
+    >
+  </div>
+
+  <div class="project-card-body">
+
+    <h3>GIS Mapping for Public Health</h3>
+
+    <div class="project-tags">
+      <span>GIS</span>
+      <span>R Programming</span>
+      <span>Spatial Analysis</span>
+    </div>
+
+    <p class="project-card-subtitle">
+      Explore static and interactive maps illustrating
+      simulated vaccination coverage and healthcare
+      facility distributions across Georgia.
+    </p>
+
+    <a
+      href="files/gis-project.html"
+      class="project-view-button"
+      target="_blank"
+      rel="noopener noreferrer">
+      VIEW PROJECT <span aria-hidden="true">→</span>
+    </a>
+
+  </div>
+</article>
+
+
       </div>
 
 

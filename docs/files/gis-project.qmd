@@ -1,0 +1,450 @@
+---
+title: "GIS Mapping for Public Health"
+author: "Kalyn Newton"
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    code-copy: true
+    code-tools: true
+execute:
+  eval: true
+  warning: false
+  message: false
+---
+
+# Project Overview
+
+The purpose of this project is to demonstrate the use of Geographic Information Systems (GIS) to visualize and interpret county-level public health data. Using Georgia counties and simulated vaccination coverage data, this project explores different mapping techniques to identify geographic patterns and communicate public health information. Static and interactive maps were developed to demonstrate how geographic data can support public health analysis and decision-making.
+
+# Methods
+
+Georgia county boundaries are obtained using the `maps` R package and converted into spatial features using the `sf` package. Simulated county-level health data were generated, including vaccination rates, child population, and vaccination target status. These data were joined to county boundaries using identifiers and names. The `ggplot` function from the `tidyverse` package was used to create continuous and classified choropleth maps to visualize vaccination coverage across Georgia counties. Simulated community clinic locations and annual visit counts were generated to demonstrate point and proportional-symbol mapping techniques. An interactive map was also developed using the `leaflet` package to display county-level vaccination coverage with labels and a legend to support interpretation.
+
+# GIS Maps
+
+## Setup
+
+```{r}
+#|label: load-packages
+
+library(tidyverse)
+library(sf)
+library(maps)
+library(leaflet)
+library(htmltools)
+```
+
+## Georgia County Boundaries
+
+```{r}
+#|label: county-boundaries
+
+georgia_counties <- maps::map(
+  database = "county",
+  regions = "georgia",
+  plot = FALSE,
+  fill = TRUE
+) %>%
+  st_as_sf() %>%
+  rename(
+    county_id = ID
+  ) %>%
+  mutate(
+    county_name = str_remove(
+      county_id,
+      "^georgia,"
+    ),
+    county_name = str_to_title(
+      county_name
+    )
+  )
+
+georgia_counties <- st_make_valid(georgia_counties)
+```
+
+```{r}
+#|label: georgia-county-map
+
+ggplot(
+  data = georgia_counties
+) +
+  geom_sf(
+    fill = "#F3F4F6",
+    color = "white",
+    linewidth = 0.25
+  ) +
+  labs(
+    title = "Georgia County Boundaries",
+    subtitle = "Each polygon can be joined to county-level health information",
+    caption = "Boundary data: maps R package"
+  ) +
+  theme_void()
+```
+
+## Simulated Health Data
+
+```{r}
+#|label: health-data
+
+set.seed(716)
+
+county_health <- georgia_counties %>%
+  st_drop_geometry() %>%
+  distinct(
+    county_id,
+    county_name
+  ) %>%
+  mutate(
+    vaccination_rate = pmin(
+      pmax(
+        rnorm(
+          n = n (),
+          mean = 71,
+          sd = 6
+        ),
+        45
+      ),
+      95
+    ),
+    child_population = round(
+      runif(
+        n = n (),
+        min = 1500,
+        max = 75000
+      )
+    ),
+    target_status = if_else(
+      vaccination_rate >= 80,
+      "Met Target",
+      "Below Target"
+    )
+  )
+
+county_health %>%
+  select(
+    county_name,
+    vaccination_rate,
+    child_population,
+    target_status
+  ) %>%
+  slice_head(
+    n = 8
+  )
+```
+
+## Spatial Join
+
+```{r}
+#|label: spatial-join
+
+county_map_data <- georgia_counties %>%
+  left_join(
+    county_health,
+    by = c(
+      "county_id",
+      "county_name"
+    )
+  )
+```
+
+```{r}
+#|label: verify-join
+
+county_map_data %>%
+  summarize(
+    county_count = n(),
+    missing_rates = sum(
+      is.na(vaccination_rate)
+    )
+  )
+```
+
+## Continuous Choropleth
+
+```{r}
+#|label: continuous-map
+
+ggplot(
+  data = county_map_data
+) +
+  geom_sf(
+    mapping = aes(
+      fill = vaccination_rate
+    ),
+    color = "white",
+    linewidth = 0.2
+  ) +
+  scale_fill_viridis_c(
+    option = "C",
+    direction = 1,
+    limits = c(
+      45,
+      95
+    ),
+    name = "Vaccination\ncoverage (%)"
+  ) +
+  labs(
+    title = "Simulated Vaccination Coverage Varied Across Georgia Counties",
+    subtitle = "Example data created for instructional purposes",
+    caption = "Boundary data: maps R package | Health values are simulated"
+  ) +
+  theme_void() +
+  theme(
+    legend.position = "right",
+    plot.title.position = "plot"
+  )
+```
+
+::: {.callout-note title = "Map Interpretation"}
+
+This map illustrates variation in simulated vaccination coverage across Georgia counties using a continuous color scale. Differences in color intensity allow viewers to identify geographic patterns in vaccination rates.
+
+:::
+
+## Classified Choropleth
+
+```{r}
+#|label: county-classification
+
+county_map_data <- county_map_data %>%
+  mutate(
+    coverage_status = case_when(
+      vaccination_rate < 70 ~ "Below 70%",
+      vaccination_rate < 80 ~ "70% to 79.9%",
+      vaccination_rate >= 80 ~ "80% or higher",
+      TRUE ~ "Missing"
+    ),
+    coverage_status = factor(
+      coverage_status,
+      levels = c(
+        "Below 70%",
+        "70% to 79.9%",
+        "80% or higher",
+        "Missing"
+      )
+    )
+  )
+```
+
+```{r}
+#|label: classified-map
+
+ggplot(
+  data = county_map_data
+) +
+  geom_sf(
+    mapping = aes(
+      fill = coverage_status
+    ),
+    color = "white",
+    linewidth = 0.2
+  ) +
+  scale_fill_manual(
+    values = c(
+      "Below 70%" = "#D55E00",
+      "70% to 79.9%" = "#E69F00",
+      "80% or higher" = "#355E3B"
+    ),
+    drop = FALSE
+  ) +
+  labs(
+    title = "Counties Below the Example Target Are Easy to Identify",
+    subtitle = "Categories are based on instructional thresholds",
+    caption = "Boundary data: maps R package | Health values are simulated"
+  ) +
+  theme_void() +
+  theme(
+    legend.position = "bottom",
+    plot.title.position = "plot"
+  )
+```
+
+::: {.callout-note title="Map Interpretation"}
+This map categorizes simulated county-level vaccination coverage into three groups based on example thresholds of `Below 70%`, `70% to 79.9%`, and `80% or higher`. This classification allows viewers to distinguish counties with lower vaccination coverage from those meeting or exceeding the 80% target.
+:::
+
+## Point Map
+
+```{r}
+#|label: clinic-points
+
+set.seed(718)
+
+clinic_points <- county_map_data %>%
+  slice_sample(
+    n = 20
+  ) %>%
+  st_centroid() %>%
+  transmute(
+    clinic_name = paste(
+      county_name,
+      "Community Clinic"
+    ),
+    annual_visits = round(
+      runif(
+        n = n(),
+        min = 500,
+        max = 12000
+      )
+    )
+  )
+```
+
+```{r}
+#|label: point-map
+
+ggplot() +
+  geom_sf(
+    data = georgia_counties,
+    fill = "grey95",
+    color = "white",
+    linewidth = 0.2
+  ) +
+  geom_sf(
+    data = clinic_points,
+    size = 2.5,
+    color = "#0072B2"
+  ) +
+  labs(
+    title = "Simulated Community Clinic Locations",
+    subtitle = "Points are generated for instructional purposes",
+    caption = "Boundary data: maps R package | Clinic locations are simulated"
+  ) +
+  theme_void()
+```
+
+::: {.callout-note title="Map Interpretation"}
+This map displays simulated geographic locations of 20 community clinics across Georgia counties. The points are used to illustrate and represent how healthcare facilities are spatially distributed, but do not indicate actual clinic locations or available services.
+:::
+
+## Proportional-Symbol Map
+
+```{r}
+#|label: proportional-symbol-map
+
+ggplot() +
+  geom_sf(
+    data = georgia_counties,
+    fill = "grey95",
+    color = "white",
+    linewidth = 0.2
+  ) +
+  geom_sf(
+    data = clinic_points,
+    mapping = aes(
+      size = annual_visits
+    ),
+    color = "#0072B2",
+    alpha = 0.65
+  ) +
+  scale_size_area(
+    max_size = 11,
+    labels = scales::label_comma(),
+    name = "Annual visits"
+  ) +
+  labs(
+    title = "Simulated Clinic Volume Varied Across Locations",
+    subtitle = "Symbol area represents annual visits",
+    caption = "Boundary data: maps R package | Clinic locations and visits are simulated"
+  ) +
+  theme_void() +
+  theme(
+    legend.position = "right"
+  )
+```
+
+::: {.callout-note title="Map Interpretation"}
+This map displays simulated community clinic locations with proportional symbols based on annual clinic visits. Differences in symbol size allow viewers to compare simulated service utilization across clinic locations.
+:::
+
+## Interactive Leaflet Map
+
+```{r}
+#|label: leaflet-map
+
+county_leaflet <- county_map_data %>%
+  st_transform(
+    crs = 4326
+  )
+
+coverage_palette <- colorNumeric(
+  palette = "viridis",
+  domain = county_leaflet$vaccination_rate,
+  na.color = "#BDBDBD"
+)
+
+county_labels <- paste0(
+  "<strong>",
+  htmlEscape(
+    county_leaflet$county_name
+  ),
+  " County</strong>",
+  "<br>Simulated vaccination coverage: ",
+  round(
+    county_leaflet$vaccination_rate,
+    digits = 1
+  ),
+  "%",
+  "<br>Simulated child population: ",
+  scales::comma(
+    county_leaflet$child_population
+  )
+) %>%
+  lapply(
+    HTML
+  )
+```
+
+```{r}
+leaflet(
+  data = county_leaflet,
+  options = leafletOptions(
+    minZoom = 5
+  )
+) %>%
+  addProviderTiles(
+    providers$CartoDB.Positron
+  ) %>%
+  addPolygons(
+    fillColor = ~coverage_palette(
+      vaccination_rate
+    ),
+    fillOpacity = 0.8,
+    color = "white",
+    weight = 0.6,
+    opacity = 1,
+    label = county_labels,
+    highlightOptions = highlightOptions(
+      weight = 2,
+      color = "#333333",
+      fillOpacity = 0.9,
+      bringToFront = TRUE
+    )
+  ) %>%
+  addLegend(
+    pal = coverage_palette,
+    values = ~vaccination_rate,
+    title = "Simulated coverage (%)",
+    position = "bottomright",
+    opacity = 0.8
+  )
+```
+
+::: {.callout-note title="Map Interpretation"}
+This interactive map allows viewers to explore simulated vaccination coverage across Georgia counties. County-level labels provide additional information on vaccination rates and child population, supporting geographic comparisons.
+:::
+
+# Discussion
+
+## Limitations
+
+There are several limitations to accurately interpreting GIS mapping and spatial analysis. In this project, most of the data including vaccination rates, child population, clinic locations, and annual visit counts were simulated for instructional purposes and do not represent actual public health information for the state of Georgia. Additionally, county-level data may inaccurately depict variations within individual communities and should not be used to make assumptions about individual health behaviors. The third limitation to consider is that simulated clinic locations were generated using county centroids, which may not accurately represent the geographic distributions of healthcare facilities and accessibility of services.
+
+## Ethical and Accessibility Considerations
+
+Ethical and accessibility considerations are important to ensure public health information is interpreted and communicated appropriately. Public health professionals should also be cautious about generalizing geographic patterns or stigmatizing counties based on differences in vaccination rates or health demographics. Additionally, the inclusion of exact locations of health-related facilities should be carefully considered to address potential privacy or safety concerns. Missing data and uncertainty should be clearly communicated to promote transparency and prevent misleading interpretations. Maps should include clear titles, subtitles, captions, legends, and data source information to support accurate interpretation. Accessible color schemes should also be considered to improve visibility. Static maps or data tables should be available as alternatives for individuals who may have difficulty using or understanding interactive maps.
+
+# Conclusion
+
+This project demonstrated the application of GIS mapping techniques to visualize and interpret county-level public health data. Continuous and classified choropleth maps illustrated geographic variations in simulated vaccination coverage, while point and proportional-symbol maps demonstrated how healthcare facility locations and service utilization can be represented spatially. An interactive Leaflet map provided additional context and a detailed view of county-level health information.

@@ -65,6 +65,8 @@ newton.kalyn@gmail.com
 
 ::: {.contact-item}
 
+![](images/github-icon.png){.contact-icon fig-alt="GitHub icon"}
+
 <p class="contact-label">GITHUB</p>
 
 <p class="contact-detail">

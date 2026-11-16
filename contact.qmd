@@ -65,6 +65,17 @@ newton.kalyn@gmail.com
 
 ::: {.contact-item}
 
+<p class="contact-label">GITHUB</p>
+
+<p class="contact-detail">
+<a href="https://github.com/knewton910" target="_blank" rel="noopener noreferrer">View my GitHub profile</a>
+</p>
+
+:::
+
+
+::: {.contact-item}
+
 ![](images/location-icon.png){.contact-icon fig-alt="Location icon"}
 
 <p class="contact-label">LOCATION</p>

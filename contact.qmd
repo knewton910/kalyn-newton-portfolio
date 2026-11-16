@@ -34,21 +34,7 @@ LET'S COLLABORATE ✦ LET'S CREATE ✦ LET'S CONNECT ✦
 
 :::
 
-
 ::: {.contact-options}
-
-::: {.contact-item}
-
-![](images/email-icon.png){.contact-icon fig-alt="Email icon"}
-
-<p class="contact-label">EMAIL</p>
-
-<p class="contact-detail">
-newton.kalyn@gmail.com
-</p>
-
-:::
-
 
 ::: {.contact-item}
 
@@ -71,6 +57,19 @@ newton.kalyn@gmail.com
 
 <p class="contact-detail">
 <a href="https://github.com/knewton910" target="_blank" rel="noopener noreferrer">View my GitHub profile</a>
+</p>
+
+:::
+
+
+::: {.contact-item}
+
+![](images/email-icon.png){.contact-icon fig-alt="Email icon"}
+
+<p class="contact-label">EMAIL</p>
+
+<p class="contact-detail">
+newton.kalyn@gmail.com
 </p>
 
 :::
